@@ -1,3 +1,125 @@
+use IMDB;
+
+-- CREACION DE TABLAS TEMPORALES
+
+CREATE TABLE namebasics(
+    nconst VARCHAR(115),
+    primaryname VARCHAR(115),
+    birthyear VARCHAR(45),
+    deathyear VARCHAR(45),
+    primaryProfession VARCHAR(115),
+    knownforTitles VARCHAR(115)
+);
+
+BULK INSERT namebasics
+FROM '/namebasics.tsv'
+WITH
+(
+    FIRSTROW = 2,
+    FIELDTERMINATOR = '\t',
+    ROWTERMINATOR = '\n'
+);
+
+CREATE TABLE titlebasics(
+    tconst VARCHAR(45),
+    titleType VARCHAR(155),
+    primaryTitle VARCHAR(455),
+    originalTitle VARCHAR(455),
+    isAdult VARCHAR(125),
+    startYear VARCHAR(45),
+    endYear VARCHAR(45),
+    runtimeMinutes VARCHAR(45),
+    genres VARCHAR(45)
+);
+
+-- drop TABLE titlebasics;
+
+BULK INSERT titlebasics
+FROM '/titlebasics.tsv'
+WITH
+(
+    FIRSTROW = 2,
+    FIELDTERMINATOR = '\t',
+    ROWTERMINATOR = '\n'
+);
+
+CREATE TABLE titlecrew(
+    tconst VARCHAR(45),
+    directors VARCHAR(MAX),
+    writers VARCHAR(MAX)
+);
+
+drop table titlecrew;
+
+BULK INSERT titlecrew
+FROM '/titlecrew.tsv'
+WITH
+(
+    FIRSTROW = 2,
+    FIELDTERMINATOR = '\t',
+    ROWTERMINATOR = '\n'
+);
+
+CREATE TABLE titleepisode(
+    tconst VARCHAR(45),
+    parentConst VARCHAR(45),
+    seasonnumber VARCHAR(11),
+    episodenumber VARCHAR(11)
+);
+
+BULK INSERT titleepisode
+FROM '/titleepisode.tsv'
+WITH
+(
+    FIRSTROW = 2,
+    FIELDTERMINATOR = '\t',
+    ROWTERMINATOR = '\n'
+);
+
+CREATE TABLE titleprincipals(
+    tconst VARCHAR(45),
+    ordering VARCHAR(7),
+    nconst VARCHAR(45),
+    category VARCHAR(45),
+    job VARCHAR(1000),
+    characters VARCHAR(6000)
+);
+
+drop table titleprincipals;
+
+BULK INSERT titleprincipals
+FROM '/titleprincipals.tsv'
+WITH
+(
+    FIRSTROW = 2,
+    FIELDTERMINATOR = '\t',
+    ROWTERMINATOR = '\n'
+);
+
+CREATE TABLE titleratings(
+    tconst VARCHAR(45),
+    averageRating VARCHAR(11),
+    numVotes VARCHAR(11)
+);
+
+BULK INSERT titleratings
+FROM '/titleratings.tsv'
+WITH
+(
+    FIRSTROW = 2,
+    FIELDTERMINATOR = '\t',
+    ROWTERMINATOR = '\n'
+);
+
+select count(*) from namebasics;
+SELECT count(*) FROM titlebasics;
+SELECT count(*) FROM titlecrew;
+SELECT count(*) FROM titleepisode;
+SELECT count(*) FROM titleprincipals;
+SELECT count(*) FROM titleratings;
+
+-- CREACION DE TABLAS DEL MODELO ER
+
 create table genre(
     id int IDENTITY(1,1),
     name VARCHAR(75),
@@ -13,8 +135,8 @@ CREATE TABLE titletype(
 CREATE TABLE title(
     id VARCHAR(45),
     titleTypeId int,
-    primaryTitle VARCHAR(115),
-    originalTitle VARCHAR(115),
+    primaryTitle VARCHAR(500),
+    originalTitle VARCHAR(500),
     isAdult int,
     startYear int,
     endYear int,
@@ -62,9 +184,9 @@ CREATE TABLE principal(
     nameId VARCHAR(45),
     titleId VARCHAR(45),
     categoryId int,
-    jobId VARCHAR(115),
+    jobId VARCHAR(1000),
     orden VARCHAR(45),
-    character VARCHAR(45),
+    character VARCHAR(6000),
     PRIMARY KEY (id),
     FOREIGN KEY (nameId) REFERENCES name(id),
     FOREIGN KEY (titleId) REFERENCES title(id),
