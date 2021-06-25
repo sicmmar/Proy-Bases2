@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C140B8B2-E120-086B-2D8D-026BF4331B51" name="TITLE">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:00:15 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="78AAE7B6-96E7-04C1-95DE-27FF1A7EDA62">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:00:21 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="primaryTitle" id="9018EC0D-D215-527E-279C-3156E08A8159">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:00:39 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>600</dataTypeSize>
+<ownDataTypeParameters>600,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="isAdult" id="73E7338A-76FA-B782-0F62-284983EEEC97">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:01:54 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="startYear" id="40C38320-BE98-9891-E164-B5C5F184C6E1">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:02:12 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="endYear" id="C0031CC3-CAC6-2825-7008-9F968EFE8D38">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:02:33 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="endYear_1" id="A97CE76A-A9B9-B6BC-2737-C4FD67819DD3">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:02:42 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="runtime" id="52D8EDBC-221B-4C20-04B4-8D2F0974E4EB">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:02:55 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="017411F6-F8E7-2CD0-FB82-7F7753204FD0">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:03:05 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5000</dataTypeSize>
+<ownDataTypeParameters>5000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="C5343B8C-630D-F7C7-D068-D962CA05802C">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:07:37 UTC</createdTime>
+<generatorID>35813CE3-1E55-5911-871A-C5011F6B6AA4</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<referedAttribute>741AB743-38F2-98A6-5DC6-FB899005E7F0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="85B5DA6A-591A-18C8-61FA-69FC6AC1B7D1" name="TITLE PK">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:00:38 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>78AAE7B6-96E7-04C1-95DE-27FF1A7EDA62</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

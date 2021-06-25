@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="024E1D6C-9370-08B3-E4E6-91D71A7F3E29" name="EPISODE">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>16607D1F-AF44-3F0B-9F14-5678110FE3B5</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="3FAD3F2E-9BBD-DB9A-107D-BAB6B07C7CD3">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>AB2B5FDA-9D88-9478-4A78-A5F202C3E48B</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="season" id="E33E6E3E-4412-4730-0C21-5029F4869278">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>C8189466-ADB5-2570-494C-A894510003BE</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="episode" id="58FA1E15-6D0E-F397-EE74-21C716D4D978">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>4B689E11-A15D-DA69-82BE-058846C0403D</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TITLE_id2" id="94B3C4B5-F90D-556B-2976-EE006FF571EC">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>587A1337-BC16-9B5B-F529-55E1755EADCB</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FAC43A22-5DB2-25FC-B636-F9068B2F6A4A" referredColumn="25773005-EB6E-E243-3DED-781BA3103FD9"/>
+</associations>
+</Column>
+<Column name="TITLE_id" id="C2310630-BDC2-D28D-4CFB-834FFFE8ACEB">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>3FCD8F1B-3E1D-DFBF-6B69-6922664A38E0</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EA2FA192-6C4F-34E6-A200-2BEA609AB27F" referredColumn="25773005-EB6E-E243-3DED-781BA3103FD9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3C22EC1E-D235-E292-DC38-D0ACA4AE4C42" name="EPISODE_PK">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>902EA68D-5318-98D5-9C3C-E486D2BDC145</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3FAD3F2E-9BBD-DB9A-107D-BAB6B07C7CD3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="67623DA8-6289-5774-837A-1E6A86655038" name="EPISODE_TITLE_FK">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>06C4EFF2-BE92-EFAD-3F67-6607CE8D450C</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C2310630-BDC2-D28D-4CFB-834FFFE8ACEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E72AA86E-B7C4-C1E9-9D17-B478A56C7AF7" name="EPISODE_TITLE_FKv2">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:35 UTC</createdTime>
+<generatorID>140C1505-89B0-F1B9-B023-8AC6814BDA74</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94B3C4B5-F90D-556B-2976-EE006FF571EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

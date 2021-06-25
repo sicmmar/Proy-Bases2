@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="16607D1F-AF44-3F0B-9F14-5678110FE3B5" name="EPISODE">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:08:11 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="AB2B5FDA-9D88-9478-4A78-A5F202C3E48B">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:08:18 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="season" id="C8189466-ADB5-2570-494C-A894510003BE">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:12:03 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="episode" id="4B689E11-A15D-DA69-82BE-058846C0403D">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:12:11 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="587A1337-BC16-9B5B-F529-55E1755EADCB">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:13:18 UTC</createdTime>
+<generatorID>140C1505-89B0-F1B9-B023-8AC6814BDA74</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<referedAttribute>78AAE7B6-96E7-04C1-95DE-27FF1A7EDA62</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id2" id="3FCD8F1B-3E1D-DFBF-6B69-6922664A38E0">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:13:38 UTC</createdTime>
+<generatorID>06C4EFF2-BE92-EFAD-3F67-6607CE8D450C</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<referedAttribute>78AAE7B6-96E7-04C1-95DE-27FF1A7EDA62</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="902EA68D-5318-98D5-9C3C-E486D2BDC145" name="EPISODE PK">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:11:48 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AB2B5FDA-9D88-9478-4A78-A5F202C3E48B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1A8009BE-F182-4E01-EE64-A0999F02B52A" name="TITLE_GENRE">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:03:33 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="09DB8D9C-F7F9-495B-7C29-4BC635B26E62">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:04:07 UTC</createdTime>
+<generatorID>B008E67F-02B5-3739-506F-F150B98169E7</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<referedAttribute>7D79C076-F2A2-7FB0-709E-92BED341A244</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="58B1C74A-3E00-7349-AA84-9BFC9E8E5DBB">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:06:52 UTC</createdTime>
+<generatorID>F6504AC6-CE5E-6312-8D55-CAEFA65111EB</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<referedAttribute>78AAE7B6-96E7-04C1-95DE-27FF1A7EDA62</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F890BEE2-F3A2-5B8E-66A6-08B1895C0C3B" name="TITLE_GENRE PK">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:04:07 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="787B1A51-FC3C-6E79-54BB-F925BBF551E6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>09DB8D9C-F7F9-495B-7C29-4BC635B26E62</attributeRef>
+<attributeRef>58B1C74A-3E00-7349-AA84-9BFC9E8E5DBB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

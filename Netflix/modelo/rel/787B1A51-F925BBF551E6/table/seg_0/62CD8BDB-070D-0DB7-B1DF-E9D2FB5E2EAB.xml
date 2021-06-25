@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="62CD8BDB-070D-0DB7-B1DF-E9D2FB5E2EAB" name="TITLETYPE">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>5C5725C5-CF01-D7E6-AEFC-9C946AF79959</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="560A77B8-7820-B338-B2E3-AEDB23C09AA7">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>741AB743-38F2-98A6-5DC6-FB899005E7F0</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="25155C3C-EE51-1966-8402-016E232AF000">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>1E428C91-AA63-3E44-8318-56F4C34C2E43</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>115</dataTypeSize>
+<ownDataTypeParameters>115,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C425D166-190E-3106-A505-436918048EC8" name="TITLETYPE_PK">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>57F3707D-9A7D-9D86-5935-F52292780FD7</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="560A77B8-7820-B338-B2E3-AEDB23C09AA7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

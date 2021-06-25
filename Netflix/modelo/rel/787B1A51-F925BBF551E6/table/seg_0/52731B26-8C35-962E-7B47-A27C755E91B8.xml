@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="52731B26-8C35-962E-7B47-A27C755E91B8" name="GENRE">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>EE7DA111-A2A3-3B2D-812A-599F02A259A0</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="1745E03D-B1E3-E8A6-636E-5F8790592A92">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>7D79C076-F2A2-7FB0-709E-92BED341A244</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="0B0E4444-7484-8FA5-E6CD-7B9B6D83F89E">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>224A0A7B-4ED7-1DC8-2361-7CBB3DB68489</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>115</dataTypeSize>
+<ownDataTypeParameters>115,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C16D03DD-CE2B-C8F6-1DCE-D0D942A45B93" name="GENRE_PK">
+<createdBy>marianasic</createdBy>
+<createdTime>2021-06-25 02:14:34 UTC</createdTime>
+<generatorID>BDE6E5F3-2A34-BF89-96C4-DB23C839FC7B</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1745E03D-B1E3-E8A6-636E-5F8790592A92"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
