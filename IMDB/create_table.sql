@@ -233,3 +233,45 @@ CREATE TABLE episode(
     FOREIGN KEY (titleId) REFERENCES title(id),
     FOREIGN KEY (parentId) REFERENCES title(id)
 );
+
+CREATE TABLE region(
+    id int IDENTITY(1,1),
+    name VARCHAR(55),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE language(
+    id int IDENTITY(1,1),
+    name VARCHAR(55),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE alternativeType(
+    id int IDENTITY(1,1),
+    name VARCHAR(55),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE alternativeAttribute(
+    id int IDENTITY(1,1),
+    name VARCHAR(55),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE alternativeTitle(
+    id int IDENTITY(1,1),
+    titleId VARCHAR(45),
+    regionId int,
+    languageId int,
+    alternativeTypeId int,
+    alternativeAttributeId int,
+    title VARCHAR(500),
+    ordering int,
+    isOriginal int,
+    PRIMARY KEY(id),
+    FOREIGN KEY (titleId) REFERENCES title(id),
+    FOREIGN KEY (regionId) REFERENCES region(id),
+    FOREIGN KEY (languageId) REFERENCES language(id),
+    FOREIGN KEY (alternativeTypeId) REFERENCES alternativeType(id),
+    FOREIGN KEY (alternativeAttributeId) REFERENCES alternativeAttribute(id)
+);

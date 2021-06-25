@@ -13,6 +13,8 @@ Desarrollado por: **_Asunción Mariana Sic Sor_**
 
 # IMDB
 
+Esta base de datos se desarrolló en un servidor con Sistema Operativo Arch Linux (Manjaro KFCE)
+
 ## Modelo ER
 El modelo Entidad-Relacional es el siguiente
 
@@ -85,4 +87,6 @@ Y ya quedan insertados los datos en la base de datos
 ![](img/insert-imdb.png)
 
 De esta manera se insertan los datos en la base de datos.
+
+El script de la inserción en la base de datos se encuentra en el archivo [```IMDB/insert.sql```](#https://github.com/sicmmar/Proy-Bases2/blob/main/IMDB/insert.sql)
 
