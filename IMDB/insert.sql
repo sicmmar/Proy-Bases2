@@ -84,3 +84,5 @@ SELECT t.id, tr.averageRating, tr.numVotes FROM titleratings tr INNER JOIN title
 SELECT n.primaryName, prof.name FROM nameProfession names INNER JOIN name n ON names.nameId = n.id
 INNER JOIN profession prof ON names.professionId = prof.id WHERE prof.name = 'actress' OR prof.name = 'actor'
 OR prof.name = 'writer' OR prof.name = 'director';
+
+SELECT * FROM writer;
