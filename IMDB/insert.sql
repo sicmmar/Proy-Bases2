@@ -86,3 +86,10 @@ INNER JOIN profession prof ON names.professionId = prof.id WHERE prof.name = 'ac
 OR prof.name = 'writer' OR prof.name = 'director';
 
 SELECT * FROM writer;
+
+EXEC sp_addlinkedserver
+    @server = N'172.17.0.2',
+    @srvproduct = N'SQL Server';
+GO
+
+SELECT name FROM [172.17.0.2].master.sys.databases;
