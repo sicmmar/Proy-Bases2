@@ -4,6 +4,11 @@ INNER JOIN name n on p.nameId = n.id INNER JOIN category cat ON p.categoryId = c
 where primaryTitle = 'Frozen'
 and tt.name = 'movie' and startYear = 2013 and (cat.name = 'actress' or cat.name = 'actor');
 
+SELECT * FROM [192.168.1.2].IMDB.dbo.title tl INNER JOIN [192.168.1.2].IMDB.dbo.titletype ty ON tl.titleTypeId = ty.id
+WHERE UPPER(tl.primaryTitle) LIKE UPPER('%Vis%');
+
+SELECT * FROM title;
+
 -- INSERT TITLE
 SELECT TOP 1 tl.id, tl.primaryTitle, tl.isAdult, tl.startYear, tl.endYear, tl.runtime, 'descrip', ty.id
 FROM [192.168.1.2].IMDB.dbo.title tl INNER JOIN [192.168.1.2].IMDB.dbo.titletype ty ON tl.titleTypeId = ty.id

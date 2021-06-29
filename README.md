@@ -169,6 +169,7 @@ Se comienza creando y asignando el título de ```insert_title``` y con parámetr
 |@anio|Es de tipo ```int```, contiene el año de inicio, osea el año en el que se inició o estrenó el título a almacenar|
 |@tipo_titulo|Es de tipo ```int```, contiene el tipo de título que es (ya sea, tvSerie, show, movie, etc)|
 |@desc|Es de tipo ```varchar```, contiene una breve descripción del título que se va a almacenar|
+|@flag|Es de tipo ```varchar```, parámetro de salida para imprimir el resultado del procedimiento almacenado|
 
 Se crea el procedimiento y sus parámetros:
 ```sql
@@ -177,6 +178,7 @@ CREATE PROCEDURE insert_title
     @anio int, 
     @tipo_titulo int, 
     @desc varchar(5000)
+    @flag varchar(115) OUTPUT
 ```
 
 Luego se hace uso de una variable ```@id_title``` la cual almacena el id del título en dado ya esté registrado en la base de datos de IMDB
@@ -186,7 +188,7 @@ DECLARE @id_title VARCHAR(115);
 
 SET @id_title = (
     SELECT TOP 1 tl.id FROM [192.168.1.2].IMDB.dbo.title tl
-    WHERE UPPER(tl.primaryTitle) = UPPER(@titulo) AND tl.startYear = @anio AND tl.titleTypeId = @tipo_titulo
+    WHERE UPPER(tl.primaryTitle) LIKE UPPER(@titulo) AND tl.startYear = @anio AND tl.titleTypeId = @tipo_titulo
 );
 ```
 
@@ -196,14 +198,17 @@ Se hace la respectiva verificación si la variable es nula o no (es decir, si el
 IF @id_title IS NULL
     BEGIN
         -- SIGNIFICA QUE EL TITULO NO ESTA EN EL CATALOGO DE IMDB
-        RETURN(1)
+        SET @flag = 'El título ' + @titulo + ' no se ha encontrado.';
+        RETURN
     END
 ```
 
-En dado caso ya exista, se inserta en las tablas respectivas que se han mencionado antes
+En dado caso ya exista, se inserta en las tablas respectivas que se han mencionado antes.
+
+Además se vuelve a verificar que no exista el título a agregar en la base de datos de Netflix 
 
 ```sql
-ELSE
+IF (SELECT primaryTitle FROM title t WHERE t.id = @id_title) IS NULL
     BEGIN
         -- INSERTAR A LA TABLA TITLE
         INSERT INTO title(id, primaryTitle, isAdult, startYear, endYear, runtime, [description], titleTypeId)
@@ -227,6 +232,9 @@ ELSE
         FROM [192.168.1.2].IMDB.dbo.director dr, role 
         WHERE dr.titleId = @id_title AND role.name = 'writer';
 
+        -- INSERT TITLE_GENRE
+        INSERT INTO title_genre(genreId, titleId) VALUES (@tipo_titulo, @id_title);
+
         -- INSERTAR A LA TABLA EPISODE
         IF (SELECT count(*) FROM [192.168.1.2].IMDB.dbo.episode ep WHERE ep.parentId = @id_title) > 0
             BEGIN
@@ -235,7 +243,18 @@ ELSE
                 FROM [192.168.1.2].IMDB.dbo.episode ep WHERE ep.parentId = @id_title;
             END
 
-        RETURN(0)
+        SET @flag = 'El título ' + @titulo + ' ha sido agregado.';
+        RETURN
+    END
+```
+
+Y si ya ha sido agregado antes, no se agrega nada en la base de datos
+
+```sql
+ELSE
+    BEGIN
+        SET @flag = 'El título ' + @titulo + ' ya ha sido agregado antes.';
+        RETURN
     END
 ```
 
@@ -244,7 +263,9 @@ El procedimiento almacenado completo se encuentra en el archivo [```stored.sql``
 Luego ya solo se ejecuta con la instrucción
 
 ```sql
-EXEC insert_title 'Frozen',2013,9,'Elsa found her power';
+DECLARE @result VARCHAR(115);
+EXEC insert_title 'Frozen',2013,9,'Elsa found her power', @flag = @result OUTPUT;
+SELECT @result 'Resultado';
 ```
 
 ![](img/exec.png)
