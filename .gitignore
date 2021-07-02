@@ -1,2 +1,4 @@
 IMDB/.data/
 Netflix/modelo/
+daemon/__pycache__/
+client/__pycache__/

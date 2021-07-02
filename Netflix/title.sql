@@ -36,4 +36,37 @@ WHERE dr.titleId = 'tt2294629' AND role.name = 'writer';
 SELECT ep.titleId, ep.parentId, ep.season, ep.episode
 FROM [192.168.1.2].IMDB.dbo.episode ep WHERE ep.parentId = 'tt0108778';
 
-SELECT * FROM [192.168.1.2].IMDB.dbo.title tt WHERE tt.id = 'tt0583432';
+SELECT * FROM [192.168.1.2].IMDB.dbo.title tt WHERE tt.id = 'tt0108778';
+
+SELECT t.id, t.primaryTitle, t.isAdult, t.startYear, t.endYear, t.runtime, t.[description], tipo.name,
+g.name, p.name, r.name
+FROM title t INNER JOIN titletype tipo ON t.titleTypeId = tipo.id INNER JOIN title_genre tg ON 
+t.id = tg.titleId INNER JOIN genre g ON tg.genreId = g.id INNER JOIN crew c ON t.id = c.titleId
+INNER JOIN person p ON c.personId = p.id  INNER JOIN role r ON c.roleId = r.id;
+
+
+-- TO CREATE THE COLLECTION
+-- THE TITLE
+SELECT t.id, t.primaryTitle, t.isAdult, t.startYear, t.endYear, t.runtime, t.[description], tp.name FROM title t INNER JOIN titletype tp 
+ON t.titleTypeId = tp.id WHERE t.id = 'tt2294629';
+
+-- THE CREW
+SELECT p.name FROM crew c INNER JOIN person p ON c.personId = p.id INNER JOIN role r ON c.roleId = r.id
+WHERE c.titleId = 'tt2294629' AND (r.name = 'actress' OR r.name = 'actor');
+
+SELECT p.name FROM crew c INNER JOIN person p ON c.personId = p.id INNER JOIN role r ON c.roleId = r.id WHERE c.titleId = 'tt2294629' AND r.name = 'director';
+
+SELECT p.name FROM crew c INNER JOIN person p ON c.personId = p.id INNER JOIN role r ON c.roleId = r.id
+WHERE c.titleId = 'tt2294629' AND r.name = 'writer';
+
+-- THE GENRE
+SELECT g.name FROM title_genre tg INNER JOIN genre g ON tg.genreId = g.id WHERE tg.titleId = 'tt2294629';
+
+-- RATING
+SELECT r.averageRating, r.numVotes FROM [192.168.1.2].IMDB.dbo.rating r WHERE r.titleId = 'tt2294629';
+
+-- THE EPISODES 
+SELECT * FROM episode e;
+
+SELECT ep.titleId, ep.parentId, ep.season, ep.episode
+FROM [192.168.1.2].IMDB.dbo.episode ep WHERE ep.parentId = 'tt0108778';

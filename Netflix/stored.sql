@@ -46,7 +46,8 @@ AS
                     WHERE dr.titleId = @id_title AND role.name = 'writer';
 
                     -- INSERT TITLE_GENRE
-                    INSERT INTO title_genre(genreId, titleId) VALUES (@tipo_titulo, @id_title);
+                    INSERT INTO title_genre(titleId, genreId)
+                    SELECT * FROM [192.168.1.2].IMDB.dbo.titleGenre g WHERE g.titleId = @id_title;
 
                     -- INSERTAR A LA TABLA EPISODE
                     IF (SELECT count(*) FROM [192.168.1.2].IMDB.dbo.episode ep WHERE ep.parentId = @id_title) > 0
@@ -81,7 +82,14 @@ GO
 -- 10. short
 
 DECLARE @result VARCHAR(115);
-EXEC insert_title 'Frozen',2013,9,'Elsa found her power', @flag = @result OUTPUT;
+EXEC insert_title 'Mulan',1998,9,'', @flag = @result OUTPUT;
 SELECT @result 'Resultado';
 
 SELECT * FROM title;
+
+
+
+-- DELETE from episode;
+-- delete from crew;
+-- DELETE from title_genre;
+-- DELETE from title;

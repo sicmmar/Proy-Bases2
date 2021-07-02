@@ -269,3 +269,21 @@ SELECT @result 'Resultado';
 ```
 
 ![](img/exec.png)
+
+# Mongo
+
+En base al [modelo entidad relación](#modelado-de-datos) de Netflix, la colección en Mongo del mismo queda de la siguiente manera:
+
+```json
+{
+    "_id":"tt2294629",
+    "primaryTitle":"Frozen",
+    "isAdult":0,
+    "startYear":2013,
+    "endYear":0,
+    "runtime":102,
+    "description":"Elsa found her power",
+    "titleType":"movie",
+    "genre":
+}
+```

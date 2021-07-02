@@ -7,9 +7,50 @@ conn = pymssql.connect(server='192.168.1.31',
     password= base64.b64decode('YW1hcmlsbG84Uyo='.encode('ascii')).decode('ascii'), 
     database='NETFLIX')
 
-def new_title():
-    cursor = conn.cursor()
+cursor = conn.cursor()
 
+def all_titles():
+    cursor.execute('SELECT id FROM title;')
+    titles = []
+    row = cursor.fetchone()
+    while row:
+        titles.append(str(row[0]))
+        row = cursor.fetchone()
+
+    return titles
+
+def cast_table(id_title):
+    cursor.execute("SELECT p.name FROM crew c INNER JOIN person p ON c.personId = p.id INNER JOIN role r ON c.roleId = r.id WHERE c.titleId = '" + str(id_title) + "' AND (r.name = 'actress' OR r.name = 'actor');")
+    cast = []
+    row = cursor.fetchone()
+    while row:
+        cast.append(str(row[0]))
+        row = cursor.fetchone()
+    return cast
+
+def detailed_title(id_title):
+    cursor.execute("SELECT t.id, t.primaryTitle, t.isAdult, t.startYear, t.endYear, t.runtime, t.[description], tp.name FROM title t INNER JOIN titletype tp ON t.titleTypeId = tp.id WHERE t.id = '" + str(id_title) + "';")
+    return cursor.fetchone()
+
+def get_genres(id_title):
+    cursor.execute("SELECT g.name FROM title_genre tg INNER JOIN genre g ON tg.genreId = g.id WHERE tg.titleId = '" + str(id_title) + "';")
+    genres = []
+    row = cursor.fetchone()
+    while row:
+        genres.append(str(row[0]))
+        row = cursor.fetchone()
+    return genres
+
+def get_creator(id_title, role):
+    cursor.execute("SELECT p.name FROM crew c INNER JOIN person p ON c.personId = p.id INNER JOIN role r ON c.roleId = r.id WHERE c.titleId = '" + id_title + "' AND r.name = '" + role + "';")
+    return cursor.fetchone()[0]
+
+def get_rating(id_title):
+    cursor.execute("SELECT r.averageRating, r.numVotes FROM [192.168.1.2].IMDB.dbo.rating r WHERE r.titleId = '" + id_title + "';")
+    row = cursor.fetchone()
+    return [float(row[0]), int(row[1])]
+
+def new_title():
     title = input (":: Enter the new title > ")
     year = input (":: Enter the year of release (default 0) > ")
     print('\n')
@@ -57,5 +98,3 @@ def inicio():
 
 def exit():    
     print("Thank you, see you later.")
-
-inicio()
