@@ -8,14 +8,18 @@ from daemonize import Daemonize
 
 pid = "/tmp/collect-mongo.pid"
 
+# Conectar a mongo
 client = MongoClient(port=27017, host="3.21.100.69")
 
+# Seleccionar base de datos y coleccion
 db = client['Netflix']
 collection = db.titles
 
 def insert_data():
     for single_title in main.all_titles():
+        # Obtener lista de codigos actuales en la base de datos de Netflix
         details = main.detailed_title(single_title)
+        # Crear el objeto JSON
         title = {
             "_id": details[0],
             "primaryTitle": details[1],
@@ -34,6 +38,7 @@ def insert_data():
                 "numVotes": main.get_rating(single_title)[1]
             }
         }
+        # Insertar objeto a Mongo
         collection.insert_one(title)
 
 def first():

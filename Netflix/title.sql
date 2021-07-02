@@ -46,6 +46,8 @@ INNER JOIN person p ON c.personId = p.id  INNER JOIN role r ON c.roleId = r.id;
 
 
 -- TO CREATE THE COLLECTION
+SELECT id FROM title;
+
 -- THE TITLE
 SELECT t.id, t.primaryTitle, t.isAdult, t.startYear, t.endYear, t.runtime, t.[description], tp.name FROM title t INNER JOIN titletype tp 
 ON t.titleTypeId = tp.id WHERE t.id = 'tt2294629';
